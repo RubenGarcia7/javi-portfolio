@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;900&display=swap');
 
 :root {
-  --color-primary: #0bceaf;
-  --color-bg: #100e17;
+  --color-primary: #007ced;
+  --color-bg: #111;
 }
 
 // Media Queries Manager
@@ -293,7 +293,7 @@ span {
       }
 
       & .active {
-        color: #222;
+        color: var(--color-primary);
       }
 
     }
@@ -306,8 +306,19 @@ span {
     margin-top: 20rem;
 
     &__left {
+      width: 40%;
+      text-align: right;
+
+      &-img {
+        width: 35rem;
+        border: 10px solid #fff;
+        border-radius: 25rem;
+      }
+    }
+
+    &__right {
       width: 60%;
-      padding-right: 7.5rem;
+      padding-left: 10rem;
 
       &-heading {
         margin-bottom: 1.5rem;
@@ -336,65 +347,6 @@ span {
 
       }
     }
-
-    &__right {
-      width: 40%;
-
-      &-img {
-        width: 40rem;
-        border: 20px solid lighten(#100e17, 7%);
-        border-radius: 25rem;
-      }
-    }
-  }
-
-  .slideshow {
-    margin-top: 12rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    &__box {
-
-      & img {
-        opacity: .7;
-        filter: grayscale(100%);
-        transition: all .2s;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-
-      &--1 {
-
-        & img {
-          width: 7rem;
-        }
-      }
-
-      &--2 {
-
-        & img {
-          width: 38rem;
-        }
-      }
-
-      &--3 {
-
-        & img {
-          width: 10rem;
-        }
-      }
-
-      &--4 {
-
-        & img {
-          width: 20rem;
-        }
-      }
-    }
-
   }
 }
 
@@ -407,18 +359,16 @@ span {
     align-items: center;
 
     &__left {
+      width: 60%;
+      padding-right: 7.5rem;
+    }
+
+    &__right {
       width: 40%;
 
       & img {
         width: 100%;
       }
-    }
-
-    &__right {
-      width: 60%;
-      padding-left: 7.5rem;
-
-
     }
   }
 }
@@ -535,6 +485,38 @@ span {
           }
         }
       }
+    }
+  }
+}
+
+
+// Floating Btn
+.floating {
+  position: fixed;
+  bottom: 32px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &__btn {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1),
+      0 2px 4px -1px rgba(0, 0, 0, .06);
+
+    &-icon {
+      text-align: center;
+      display: inline-block;
+      color: #fff;
+      font-size: 20px;
     }
   }
 }
